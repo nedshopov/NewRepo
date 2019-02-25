@@ -6,13 +6,13 @@ sufficiently descriptive on my code documentation I am going to point out a list
 
 - Authentication and Authorization were not part of the current task. I assume that it will be done via JWT or another type of token.
 In order to simulate an authorized logged-in user I use a shared constant with that user's ID throughout the project. It can be found 
-in Shared/MockConstants.CurrentUserId.
+in Shared/MockConstants.CurrentUserId. All processes and web api entry points, are taking the id value from the mock constant instead of from the request.
 
 - Requests - responses. The body and the headers of the requests are functional but far from complete. I would describe them as 
 the minimum required in order for the web api to function.
 
 - Web Api requirements. I assumed that it needs to be RESTful api with all the requirements and constraints of the 
-restful service architecture - Stateless service, layered implementation - more on that later.
+restful service architecture - Stateless service, layered implementation, etc..
 
 - The back-end framework - I feel like i have more than it was required on the back-end. The business layer is separated and not referencing
 the web layer. Ideally the web layer would not reference any domain entities and data would be mapped and transfered only via Data Transfer Objects.
@@ -52,6 +52,7 @@ independently.
 In overall I think I have overdone and overcomplicated the business layer for the purposes of this task and oversimplified the front end architecture.
 There is nearly no validation logic and no unit testing, but I believe the code is written in a way that is easly testable and 
 I have pointed out several places where validation is required in the code documentation.
+The mocked CurrentUserId constant, should have been sent on every request, instead of assumed, that it 'is there' by the web application.  
 The client library at the moment has no good validation whether the api is running or not, so I would suggest starting the web project before the client one :) 
 I am treating the client library as a project only for demonstration purposes and a foundation that can be built upon.
 Thanks for your time, and looking forward hearing from you!
