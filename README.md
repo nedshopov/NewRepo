@@ -48,8 +48,8 @@ and a swagger help page.
 - Using dependency injection and interfaced services so nearly every request or call can be mocked for testing purposes or developed 
 independently. 
 
-Final words:
-Overall I think I overdid the business layer and oversimplified the front end architecture.
+3. Final words:
+In overall I think I have overdone and overcomplicated the business layer for the purposes of this task and oversimplified the front end architecture.
 There is nearly no validation logic and no unit testing, but I believe the code is written in a way that is easly testable and 
 I have pointed out several places where validation is required in the code documentation.
 The client library at the moment has no good validation whether the api is running or not, so I would suggest starting the web project before the client one :) 
