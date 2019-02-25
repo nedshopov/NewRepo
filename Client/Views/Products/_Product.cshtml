@@ -1,0 +1,22 @@
+﻿@model TestWorkTask.Shared.Models.ProductViewModel
+
+
+<table style="font-family:Arial; border: 1px solid black; width: 300px ">
+    <tr>
+        <td><b>@Html.DisplayNameFor(model => model.Name)</b></td>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <td><b>@Html.DisplayNameFor(model => model.Description)</b></td>
+        <td>@Model.Description</td>
+    </tr>
+    <tr>
+        <td><b>@Html.DisplayNameFor(model => model.Price)</b></td>
+        <td>@Model.Price</td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("AddToBasket", "AddToBasket", new { id = Model.Id, redirectToHome = true})
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,11 @@
+﻿@model Client.Models.HomeViewModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h2>Home</h2>
+<text>Current Items in shoppign cart: @Model.ItemsInCart</text>
+<br />
+<br />
+@Html.ActionLink("OpenBasket", "ShoppingCart")
+@await Html.PartialAsync("_Products", Model.Catalog)

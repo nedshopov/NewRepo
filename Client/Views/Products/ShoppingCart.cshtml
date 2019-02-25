@@ -1,0 +1,17 @@
+﻿@model TestWorkTask.Shared.Models.ShoppingCartModel
+
+@{
+    ViewData["Title"] = "ShoppingCart";
+}
+
+<h2>ShoppingCart</h2>
+<h4> @Html.ActionLink("< Back to Home", "Home", new { })</h4>
+@foreach(var item in Model.Items)
+{
+    @await Html.PartialAsync("_ShoppingCartItem", item)
+}
+
+<div>@Html.ActionLink("Clear basket", "Clear", new { })</div>
+<div>@Html.ActionLink("Checkout", "Checkout", new { })</div>
+
+<text>Total cost of the items in the basket : @Model.TotalCost()</text>

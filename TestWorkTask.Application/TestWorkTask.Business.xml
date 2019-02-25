@@ -1,0 +1,579 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestWorkTask.Business</name>
+    </assembly>
+    <members>
+        <member name="T:TestWorkTask.Business.Commands.CollectionResult`1">
+            <summary>
+            Base result class for comamands.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.CollectionResult`1.Results">
+            <summary>
+            The result entity of the command if any.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.CollectionResultQuery`2">
+            <summary>
+            Command result for collection of entites.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Commands.CollectionResultQuery`2.SetResult(System.Collections.Generic.IEnumerable{`1})">
+            <summary>
+            Set the result of the command.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.CollectionResultQuery`2.Result">
+            <summary>
+            Result object.
+            </summary>
+            <returns>A result object.</returns>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.CommandHandler`1">
+            <summary>
+            Base handler class for commands
+            </summary>
+            <typeparam name="TCommand">Command to handle.</typeparam>
+        </member>
+        <member name="M:TestWorkTask.Business.Commands.CommandHandler`1.Handle(`0)">
+            <summary>
+            The handle method.
+            </summary>
+            <param name="command">Command to handle.</param>
+            <returns>Result entity.</returns>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.GetAllProductsCommand">
+            <summary>
+            Command for getting all products.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.GetAllProductsCommandHandler">
+            <summary>
+            Command handler for get all products command.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Commands.GetAllProductsCommandHandler.Handle(TestWorkTask.Business.Commands.GetAllProductsCommand)">
+            <summary>
+            Handle method.
+            </summary>
+            <param name="command">Command for getting all products.</param>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.ICommandHandler`1">
+            <summary>
+            Interface for command handlers.
+            </summary>
+            <typeparam name="TCommand">Command to handle.</typeparam>
+        </member>
+        <member name="M:TestWorkTask.Business.Commands.ICommandHandler`1.Handle(`0)">
+            <summary>
+            Handle method.
+            </summary>
+            <param name="command">Command to handle.</param>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.AddItemToShoppingCartCommand">
+            <summary>
+            Add item to shopping cart command.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.AddItemToShoppingCartCommand.ProductId">
+            <summary>
+            Product to add.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.AddItemToShoppingCartCommand.ShoppingCartId">
+            <summary>
+            Shopping cart to use if specified.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.AddItemToShoppingCartCommand.UserId">
+            <summary>
+            Customer owner of the shopping cart.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.AddItemToShoppingCartCommand.Quantity">
+            <summary>
+            Number of items to add.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.AddItemToShoppingCartCommandHandler">
+            <summary>
+            Handler for the add item to shopping cart command.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Commands.AddItemToShoppingCartCommandHandler.Handle(TestWorkTask.Business.Commands.AddItemToShoppingCartCommand)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.GetNewShoppingCartCommand">
+            <summary>
+            Command for getting new shopping card.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.GetNewShoppingCartCommand.userId">
+            <summary>
+            Id of the user to create a shopping card for.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.GetNewShoppingCartCommandHandler">
+            <summary>
+            Command handler for creating new shopping cards.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Commands.GetNewShoppingCartCommandHandler.Handle(TestWorkTask.Business.Commands.GetNewShoppingCartCommand)">
+            <summary>
+            Command handler.
+            </summary>
+            <param name="command">Command to handle.</param>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.GetShoppingCardCommandHandler">
+            <summary>
+            Handler for the get shopping card command.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Commands.GetShoppingCardCommandHandler.Handle(TestWorkTask.Business.Commands.GetShoppingCartCommand)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.GetShoppingCartCommand">
+            <summary>
+            Get the current customer's shopping card.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.GetShoppingCartCommand.UserId">
+            <summary>
+            Id of the user to get shopping cart for.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.RemoveItemFromShoppingCartCommand">
+            <summary>
+            Remove item from shopping cart command.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.RemoveItemFromShoppingCartCommand.ProductId">
+            <summary>
+            Product to remove.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.RemoveItemFromShoppingCartCommand.ShoppingCartId">
+            <summary>
+            Shopping cart to use if specified.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.RemoveItemFromShoppingCartCommand.UserId">
+            <summary>
+            Customer owner of the shopping cart.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.RemoveItemFromShoppingCartCommand.Quantity">
+            <summary>
+            Number of items to remove.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.RemoveItemFromShoppingCartCommandHandler">
+            <summary>
+            Handler for remove item from cart command.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Commands.RemoveItemFromShoppingCartCommandHandler.Handle(TestWorkTask.Business.Commands.RemoveItemFromShoppingCartCommand)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TestWorkTask.Business.Commands.SingleResultQuery`1">
+            <summary>
+            Base command class.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Commands.SingleResultQuery`1.SetResult(`0)">
+            <summary>
+            Set the result of the command.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Commands.SingleResultQuery`1.Result">
+            <summary>
+            Result object.
+            </summary>
+            <returns>A result object.</returns>
+        </member>
+        <member name="T:TestWorkTask.Business.Constants.FieldDefinitions">
+            <summary>
+            Field definition ids and keys. Used to define new field definitions for mapping and validaiton.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Constants.MockConstants">
+            <summary>
+            Constant values who are used as mocks throughtout the system.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.DependencyInjection.InstanceScanner">
+            <summary>
+            Instance scanner.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.DependencyInjection.InstanceScanner.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Domain.Attributes.EntityAttribute">
+            <summary>
+            Attribute class to slecify an entity.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Domain.Attributes.SystemFieldDefinition">
+            <summary>
+            Field definition. In final implementation it should have more fields, used for validation against property types and mapping.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Domain.Attributes.SystemFieldDefinition.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="id">Id of the field definition.</param>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Attributes.SystemFieldDefinition.FieldDefinitionId">
+            <summary>
+            Id of the field definition. Used for validation, testing and mapping.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Domain.Entities.Address">
+            <summary>
+            Domain class entity.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Address.PostCode">
+            <summary>
+            Post code.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Address.Street">
+            <summary>
+            Street name.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Address.Town">
+            <summary>
+            Town name.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Address.Country">
+            <summary>
+            Country.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Domain.Entities.Customer">
+            <summary>
+            Base class for a customer.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Domain.Entities.Customer.Create(System.Guid,System.String,System.String,TestWorkTask.Business.Domain.Entities.Address,TestWorkTask.Business.Domain.Entities.Address,TestWorkTask.Business.Domain.Entities.PaymentInfo,System.Guid)">
+            <summary>
+            Create new user.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Customer.FirstName">
+            <summary>
+            First name of the customer.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Customer.LastName">
+            <summary>
+            Last name of the customer.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Customer.DeliveryInfo">
+            <summary>
+            Default delivery address.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Customer.BillingInfo">
+            <summary>
+            Default billing address.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Customer.PaymentInfo">
+            <summary>
+            Default payment information of the customer.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Customer.ShoppingCartId">
+            <summary>
+            The active basket for the customer.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Domain.Entities.DomainEntity">
+            <summary>
+            Base class for a domain entity. Every other domain entity should inherit from this class.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.DomainEntity.Id">
+            <summary>
+            Id of the domain entity.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.DomainEntity.RowVersion">
+            <summary>
+            Row version of the domain entity. Used for versioning.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Domain.Entities.IIdentifiableEntity">
+            <summary>
+            Interface for identifiable entites.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.IIdentifiableEntity.Id">
+            <summary>
+            Entity id.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Domain.Entities.PaymentInfo">
+            <summary>
+            Domain entity for payment information.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.PaymentInfo.ExpirationDate">
+            <summary>
+            When the payment information will expire.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Domain.Entities.Product">
+            <summary>
+            Domain entity class for a product.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Product.ImagePath">
+            <summary>
+            Path to the image for the product.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Product.Name">
+            <summary>
+            Product name.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Product.Description">
+            <summary>
+            Product description.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.Product.Price">
+            <summary>
+            Product price.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Domain.Entities.ShoppingCart">
+            <summary>
+            Domain entity for a shopping cart.
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.ShoppingCart.Products">
+            <summary>
+            Collection of products
+            </summary>
+        </member>
+        <member name="P:TestWorkTask.Business.Domain.Entities.ShoppingCart.LastEdited">
+            <summary>
+            When was the shopping card being modified the last time? 
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Domain.Entities.ShoppingCart.Empty">
+            <summary>
+            Empty the shopping cart.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Domain.Enums.PaymentType">
+            <summary>
+            Enumeration of payment types.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.HandlersDictionary">
+            <summary>
+            Dictionary of command handlers. This substitutes a proper implementation of CQRS pattern, while still maintaining some core OOP princples.
+            </summary>
+        </member>
+        <member name="F:TestWorkTask.Business.HandlersDictionary.commandHandlers">
+            <summary>
+            A dictionary of commands and command handelrs.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.HandlersDictionary.GetHandlerForCommandType``1(``0)">
+            <summary>
+            Get a command handler from the IoC container for the specific command.
+            </summary>
+            <typeparam name="TCommand"></typeparam>
+            <param name="commandType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TestWorkTask.Business.Repositories.BaseRepository`1">
+            <summary>
+            Implementation of the IBaseRepository interface. In final implementation it should work as a normal repository, that does not require specific more complex methods.
+            </summary>
+            <typeparam name="TEntity">Domain entity type.</typeparam>
+        </member>
+        <member name="F:TestWorkTask.Business.Repositories.BaseRepository`1.entities">
+            <summary>
+            !!! This is a mock up collection of data. In the final implementation should be a db context or equivalent for the specific framework.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.BaseRepository`1.Add(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.BaseRepository`1.GetAll">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.BaseRepository`1.GetById(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.BaseRepository`1.Remove(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.BaseRepository`1.CommitChanges">
+            <inheritdoc/>
+        </member>
+        <member name="T:TestWorkTask.Business.Repositories.CustomerRepository">
+            <summary>
+            Repository of customers
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Repositories.IBaseRepository`1">
+            <summary>
+            Interface for a base repository for interacting with domain data.
+            </summary>
+            <typeparam name="TEntity">Domain entity type.</typeparam>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.IBaseRepository`1.GetById(System.Guid)">
+            <summary>
+            Get base domain entity by id.
+            </summary>
+            <param name="id">Id of the domain entity to look for.</param>
+            <returns>A domain entity.</returns>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.IBaseRepository`1.GetAll">
+            <summary>
+            Get all entites of the specific type.
+            </summary>
+            <returns>A collection of all entites.</returns>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.IBaseRepository`1.Add(`0)">
+            <summary>
+            Add a entity to the database.
+            </summary>
+            <param name="entity">A domain object</param>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.IBaseRepository`1.Remove(System.Guid)">
+            <summary>
+            Remove entity by id.
+            </summary>
+            <param name="id">Id of the entity to remove.</param>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.IBaseRepository`1.CommitChanges">
+            <summary>
+            Commit the changes to the database.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Repositories.IProductRepository">
+            <summary>
+            Interface for repository of products.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Repositories.IShoppingCartRepository">
+            <summary>
+            Repository of shopping card entities.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.IShoppingCartRepository.Update(TestWorkTask.Business.Domain.Entities.ShoppingCart)">
+            <summary>
+            Update the shopping cart.
+            </summary>
+            <param name="shoppingCart">Entity to use to update.</param>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.IShoppingCartRepository.ClearShoppingCart(System.Guid)">
+            <summary>
+            Clear the objects from a shopping cart.
+            </summary>
+            <param name="id">Id of the shopping cart to clear.</param>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.IShoppingCartRepository.GetShoppingCartByUserId(System.Guid)">
+            <summary>
+            Get the shopping cart by id of a user.
+            </summary>
+            <returns>Shopping cart entity.</returns>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.IShoppingCartRepository.AddItem(System.Guid,System.Int32,System.Guid)">
+            <summary>
+            Add one or more items to the shopping cart.
+            </summary>
+            <param name="productId">Id of the product to add.</param>
+            <param name="quantity">Quantity of the product.</param>
+            <param name="shoppingCartId">Id of the shopping cart to add the items to.</param>
+            <returns>The updated shopping cart.</returns>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.IShoppingCartRepository.RemoveItem(System.Guid,System.Int32,System.Guid)">
+            <summary>
+            Remove one ore more items from the shopping cart.
+            </summary>
+            <param name="productId">Id of the product to remove.</param>
+            <param name="quantity">Quantity of the product.</param>
+            <param name="shoppingCartId">Id of the shopping cart to remove the items from.</param>
+            <returns>The updated shopping cart.</returns>
+        </member>
+        <member name="T:TestWorkTask.Business.Repositories.ProductRepository">
+            <summary>
+            Repository of products.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.ProductRepository.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.ShoppingCartRepository.#ctor">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.ShoppingCartRepository.AddItem(System.Guid,System.Int32,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.ShoppingCartRepository.RemoveItem(System.Guid,System.Int32,System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.ShoppingCartRepository.ClearShoppingCart(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.ShoppingCartRepository.GetShoppingCartByUserId(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TestWorkTask.Business.Repositories.ShoppingCartRepository.Update(TestWorkTask.Business.Domain.Entities.ShoppingCart)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TestWorkTask.Business.Services.IServiceProcessor">
+            <summary>
+            Interface for processing services.
+            </summary>
+        </member>
+        <member name="T:TestWorkTask.Business.Services.IShoppingCartService">
+            <summary>
+            Interface for the shopping cart service
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Services.IShoppingCartService.GetActiveShoppingCartForCurrentUser">
+            <summary>
+            Get the active shopping cart for the current user.
+            </summary>
+            <returns>Id of the shopping cart for the current user.</returns>
+        </member>
+        <member name="T:TestWorkTask.Business.Services.ServiceProcessor">
+            <summary>
+            Service procesor. It is overly simplified. It should have far more functionality, including queued request, asynchronous hanlding, validation etc.
+            </summary>
+        </member>
+        <member name="M:TestWorkTask.Business.Services.ServiceProcessor.Process``1(``0)">
+            <summary>
+            Process a command.
+            </summary>
+            <typeparam name="TCommand">Type of the command.</typeparam>
+            <param name="command">Command to process.</param>
+        </member>
+        <member name="T:TestWorkTask.Business.Services.ShoppingCartService">
+            <summary>
+            Implementation of the shopping cart interface.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,24 @@
+﻿@model TestWorkTask.Shared.Models.ShoppingCartItemModel
+
+<table style="font-family:Arial; border: 1px solid black; width: 300px ">
+    <tr>
+        <td><b>@Html.DisplayNameFor(model => model.Product.Name)</b></td>
+        <td>@Model.Product.Name</td>
+    </tr>
+    <tr>
+        <td><b>@Html.DisplayNameFor(model => model.Product.Price)</b></td>
+        <td>@Model.Product.Price</td>
+    </tr>
+    <tr>
+        <td><b>@Html.DisplayNameFor(model => model.Quantity)</b></td>
+        <td>@Model.Quantity</td>
+    </tr>
+    <tr>
+        <td>
+            @Html.ActionLink("RemoveFromBasket", "RemoveFromBasket", new { id = Model.Product.Id })
+        </td>
+        <td>
+            @Html.ActionLink("AddToBasket", "AddToBasket", new { id = Model.Product.Id , parentAction = nameof(Client.Controllers.ProductsController.ShoppingCart) })
+        </td>
+    </tr>
+</table>
