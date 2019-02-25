@@ -50,5 +50,8 @@ independently.
 
 Final words:
 Overall I think I overdid the business layer and oversimplified the front end architecture.
+There is nearly no validation logic and no unit testing, but I believe the code is written in a way that is easly testable and 
+I have pointed out several places where validation is required in the code documentation.
+The client library at the moment has no good validation whether the api is running or not, so I would suggest starting the web project before the client one :) 
 I am treating the client library as a project only for demonstration purposes and a foundation that can be built upon.
 Thanks for your time, and looking forward hearing from you!
