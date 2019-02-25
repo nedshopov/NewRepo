@@ -32,7 +32,7 @@ namespace TestWorkTask.Web.Controllers
       /// <returns>Redirects to the get shopping cart action.</returns>
       [HttpGet]
       [Produces("application/json")]
-      [ActionName("Get")]
+      [ActionName(nameof(BasketController.Get))]
       public IActionResult Get()
       {
          return RedirectToAction(nameof(BasketController.GetById), new { id = MockConstants.CurrentUserId });
@@ -45,7 +45,7 @@ namespace TestWorkTask.Web.Controllers
       /// <returns>Succesfull action result with a shopping cart model.</returns>
       [HttpGet("{id}")]
       [Produces("application/json")]
-      [ActionName("GetById")]
+      [ActionName(nameof(BasketController.GetById))]
       public IActionResult GetById(Guid id)
       {
          ShoppingCartModel model = GetBasketModelWithItemsByUserId(id);
@@ -60,7 +60,7 @@ namespace TestWorkTask.Web.Controllers
       /// <returns>Updated model for the shopping cart.</returns>
       [HttpPost]
       [Produces("application/json")]
-      [ActionName("AddItems")]
+      [ActionName(nameof(BasketController.AddItems))]
       public IActionResult AddItems([FromBody]ShoppingCartItemModel itemToAdd)
       {
          if(!ModelState.IsValid)
@@ -86,7 +86,7 @@ namespace TestWorkTask.Web.Controllers
       /// <returns>Updated shopping cart.</returns>
       [HttpPost]
       [Produces("application/json")]
-      [ActionName("RemoveItems")]
+      [ActionName(nameof(BasketController.RemoveItems))]
       public IActionResult RemoveItems([FromBody]ShoppingCartItemModel itemsToRemove)
       {
          if(!ModelState.IsValid)
@@ -128,7 +128,6 @@ namespace TestWorkTask.Web.Controllers
       /// <param name="id">Id of the user.</param>
       /// <returns>Not imeplemented.</returns>
       [HttpPost]
-      [Route("checkout")]
       [ActionName("Checkout")]
       public IActionResult Checkout([FromBody]Guid id)
       {
